@@ -53,7 +53,9 @@ class MoviesFragment : Fragment(), MovieSetOnClickListener<Movie> {
         super.onViewCreated(view, savedInstanceState)
         observeViewModel()
         observeRv()
-    }
+
+        }
+
 
     private fun observeViewModel() = with(viewModel) {
         moviePopular.observe(viewLifecycleOwner) {
@@ -86,4 +88,11 @@ class MoviesFragment : Fragment(), MovieSetOnClickListener<Movie> {
         viewModel.saveMovie(movie)
         Toast.makeText(requireContext(), "Saved", Toast.LENGTH_SHORT).show()
     }
+
+    fun backButtonIconSelected(){
+        findNavController().navigate(
+            MovieDetailsFragmentDirections.actionMovieDetailsFragmentToHomePage()
+        )
+    }
+
 }

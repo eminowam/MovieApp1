@@ -13,18 +13,19 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:orientation="vertical">
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="12dp"
-        android:text="Popular Movies"
-        android:textColor="@color/white"
-        android:textSize="18sp"
-        android:textStyle="bold" />
 
-    <androidx.recyclerview.widget.RecyclerView
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="12dp"
+            android:text="Популярныe"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/popular_movies_rv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -42,7 +43,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="6dp"
-        android:text="Now Playing Movies"
+        android:text="Сейчас играет"
         android:textColor="@color/white"
         android:textSize="18sp"
         android:textStyle="bold" />
@@ -65,7 +66,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="6dp"
-        android:text="Top Rated Movies"
+        android:text="Самые популярные"
         android:textColor="@color/white"
         android:textSize="18sp"
         android:textStyle="bold" />
@@ -88,7 +89,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="6dp"
-        android:text="Upcoming Movies"
+        android:text="Предстоящие"
         android:textColor="@color/white"
         android:textSize="18sp"
         android:textStyle="bold" />

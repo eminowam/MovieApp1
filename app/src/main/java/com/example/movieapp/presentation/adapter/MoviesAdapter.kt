@@ -16,7 +16,6 @@ interface MovieSetOnClickListener<T> {
     fun goMovieDetails(movieId: Int)
     fun saveMovie(item: T)
 }
-
 class MoviesAdapter(
     private val itemType: Int,
     private val listener: MovieSetOnClickListener<Movie>

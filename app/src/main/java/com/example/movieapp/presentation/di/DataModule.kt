@@ -4,7 +4,7 @@ import com.example.movieapp.data.mapper.MapFromListMovieStorageToMovie
 import com.example.movieapp.data.mapper.MapFromMovieStorageToMovie
 import com.example.movieapp.data.mapper.MapFromMovieStorageToMovie2
 import com.example.movieapp.data.repository.MovieRepositoryImpl
-import com.example.movieapp.data.repository.MovieStorageRepositoryImple
+import com.example.movieapp.data.repository.MovieStorageRepositoryImpl
 import com.example.movieapp.data.repository.PersonRepositoryImpl
 import com.example.movieapp.domain.repository.MovieStorageRepository
 import com.example.movieapp.domain.repository.MoviesRepository
@@ -19,7 +19,7 @@ val dataModule = module {
         PersonRepositoryImpl()
     }
     single<MovieStorageRepository> {
-        MovieStorageRepositoryImple(
+        MovieStorageRepositoryImpl(
             dao = get(),
             mapFromListMovieStorageToListMovie = MapFromListMovieStorageToMovie
                 (mapFromMovieStorageToMovie= MapFromMovieStorageToMovie()),

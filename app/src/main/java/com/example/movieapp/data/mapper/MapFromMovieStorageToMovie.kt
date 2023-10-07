@@ -13,7 +13,6 @@ class MapFromMovieStorageToMovie: Mapper<MovieStorage,Movie> {
             posterImage = posterPath
         )
     }
-
 }
 class MapFromListMovieStorageToMovie(
     private val mapFromMovieStorageToMovie: MapFromMovieStorageToMovie

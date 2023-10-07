@@ -16,24 +16,23 @@ import com.example.movieapp.presentation.activity.MovieDetailsActivity
 import com.example.movieapp.presentation.viewmodels.MovieDetailsViewModel
 import kotlinx.android.synthetic.main.fragment_movie_details.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
-
-
 class MovieDetailsFragment : Fragment() {
 
     private val binding by lazy {
         FragmentMovieDetailsBinding.inflate(layoutInflater)
     }
-    private val viewModel : MovieDetailsViewModel by viewModel<MovieDetailsViewModel>()
+    private val viewModel: MovieDetailsViewModel by viewModel<MovieDetailsViewModel>()
 
     private val movieId: String by lazy(LazyThreadSafetyMode.NONE) {
         MovieDetailsFragmentArgs.fromBundle(requireArguments()).id
     }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel.movieDetails.observe(viewLifecycleOwner) { movie ->
             observeUi(movie)
         }
-     viewModel.movieDetails(movieId = movieId.toInt() )
+        viewModel.movieDetails(movieId = movieId.toInt())
     }
 
     override fun onCreateView(
@@ -44,7 +43,8 @@ class MovieDetailsFragment : Fragment() {
     private fun observeUi(movie: MovieDetails) = with(binding) {
         title.text = movie.title
         budjetText.text = movie.budget.toString()
-        Glide.with(this@MovieDetailsFragment).load(Utils.IMAGE_URL + movie.backdrop_path).centerCrop()
+        Glide.with(this@MovieDetailsFragment).load(Utils.IMAGE_URL + movie.backdrop_path)
+            .centerCrop()
             .into(backpath);
         Glide.with(this@MovieDetailsFragment).load(Utils.IMAGE_URL + movie.poster).centerCrop()
             .into(poster)
@@ -54,8 +54,9 @@ class MovieDetailsFragment : Fragment() {
         release_date.text = movie.releaseDate
         runtime.text = movie.runtime.toString()
         status.text = movie.status
-        descMovie.text=movie.overview
+        descMovie.text = movie.overview
     }
+
     companion object {
         private const val MOVIE_ID = "movie_id"
         fun startIntentToMovieDetailActivity(context: Context, movieId: Int): Intent =
@@ -63,4 +64,5 @@ class MovieDetailsFragment : Fragment() {
                 bundleOf().apply { putExtra(MOVIE_ID, movieId) }
             }
     }
+
 }

@@ -8,7 +8,6 @@ import com.example.movieapp.data.storage.models.MovieStorage
 
 private const val DB_NAME = "movie_item.db"
 
-
 @Database(entities = [MovieStorage::class], version = 1, exportSchema = false)
 abstract class MovieDataBase : RoomDatabase() {
 

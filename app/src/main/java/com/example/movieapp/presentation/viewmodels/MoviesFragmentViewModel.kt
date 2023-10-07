@@ -16,11 +16,12 @@ enum class MovieCategory {
     POPULAR, NOW_PLAYING, TOP_RATED, UPCOMING
 }
 
-class MoviesFragmentViewModel(private val useCasePopular: GetPopularMoviesUseCase,
-                              private val useCaseNowPlaying: GetNowPlayingMoviesUseCase,
-                              private val useCaseTopRated: GetTopRatedMoviesUseCase,
-                              private val useCaseUpcoming: GetUpcomingMoviesUseCase,
-                              private val saveMovieUseCase:SaveMovieToStorage,
+class MoviesFragmentViewModel(
+    private val useCasePopular: GetPopularMoviesUseCase,
+    private val useCaseNowPlaying: GetNowPlayingMoviesUseCase,
+    private val useCaseTopRated: GetTopRatedMoviesUseCase,
+    private val useCaseUpcoming: GetUpcomingMoviesUseCase,
+    private val saveMovieUseCase: SaveMovieToStorage,
 ) : ViewModel() {
 
 
@@ -78,6 +79,5 @@ class MoviesFragmentViewModel(private val useCasePopular: GetPopularMoviesUseCas
     private fun getTopRatedMovie() = viewModelScope.launch {
         _topRatedMovies.value = useCaseTopRated.invoke(page = page)
     }
-
 
 }
